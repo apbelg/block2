@@ -1,0 +1,20 @@
+[
+  {
+    "NameTest":"Умножение и деление.",
+    "Questions":
+     [
+      {
+      "NumberQuestion":1,
+      "Question":"Вычислите:  55 * 3 = ",
+      "Answer":["125","155","165"],
+      "Result":"165"
+      },
+      {
+      "NumberQuestion":2,
+      "Question":"Вычислите:  15 : 3 = ",
+      "Answer":["2","10","5"],
+      "Result":"5"
+      }
+     ]
+  }
+]
