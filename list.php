@@ -6,18 +6,29 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Документ без названия</title>
+<title>Тесты</title>
 </head>
 
 <body>
+  <div class = "adminka">
+    <nav>
+      <ul>
+        <li><a href="admin.php" > Загрузка тестов </a> </li>
+        <li><a href="test.php" > Просмотр теста </a> </li>
+      </ul>
+    </nav>
+  </div>
 	<p><h2> Cписок тестов </h2></p>
-<ol>
   <?php
+   if ( isset($masNameTest) ){
+    echo '<ol>';
      foreach ($masNameTest as $value) {
        foreach ($value as $value1) {
          echo '<li>'.$value1["NameTest"].'</li>';
        }
-     } ?>
-</ol>
+     }
+    echo '</ol>';
+   }
+ ?>
 </body>
 </html>

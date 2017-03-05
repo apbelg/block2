@@ -12,6 +12,15 @@
          <title>Отправка тестов на сервер</title>
     </head>
          <body>
+           <div class = "adminka">
+             <nav>
+               <ul>
+                 <li><a href="list.php" > Список тестов </a> </li>
+                 <li><a href="test.php" > Просмотр теста </a> </li>
+               </ul>
+             </nav>
+           </div>
+
              <form method = "POST">
                  <br><br>
                  <label> Имя файла: </label>  <input type = "text" name="filename" placeholder="test1.json"><br><br>

@@ -16,14 +16,14 @@ function setData($inputData)
 //
 function getData($filename)
 {
-//    $data_test = [];
+    $data_test = [];
     if (file_exists($filename)) {
         $data_test = json_decode(file_get_contents($filename),true);
           if (!$data_test) {
             return [];
-        }
+          }
+        return $data_test;
     }
-    return $data_test;
 }
 //
 function  TestLoad()
@@ -33,5 +33,55 @@ function  TestLoad()
            setData($jsonData);
        }
 
+}
+//
+function getResult($NomTest)
+{
+  $result=[];
+  $masNameTest = getData(FILE_DATA);
+  if ( isset($NomTest) ){
+     if ( isset($masNameTest) ){
+        $i=1;
+       foreach ($masNameTest as $value) {
+          foreach ($value as $value1) {
+             if ($i == $NomTest){
+                $k=0;
+                foreach ($value1['Questions'] as $valueQuestions) {
+                    $result[$k] = $valueQuestions['Result'];
+                    $k++;
+                }
+              }
+              $i++;
+           }
+        }
+      }
+   }
+ return $result;
+}
+function showTest($masNameTest)
+{
+ if (isset($_GET['NomTest'])) {
+  $nomTest = $_GET['NomTest'];
+  $strTest = '';
+  if ( isset($nomTest) ){
+      if ( isset($masNameTest) ){
+       $i=1;
+        foreach ($masNameTest as $value) {
+          foreach ($value as $value1) {
+            if ($i == $nomTest){
+               $strTest = $strTest.'<h5>'.$value1['NameTest'].'</h5>';
+               foreach ($value1['Questions'] as $valueQuestions) {
+                  $strTest = $strTest.'Вопрос № '.$valueQuestions['NumberQuestion'].' '.$valueQuestions['Question'].'<br>';
+                   $arrAnswer = $valueQuestions['Answer'];
+                   $strTest = $strTest.' Ответы : '.$arrAnswer[0].'   '.$arrAnswer[1].'   '.$arrAnswer[2].'  '.'<br>';
+               }
+            }
+            $i++;
+          }
+        }
+      }
+    }
+ return $strTest;
+ }
 }
 ?>

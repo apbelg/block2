@@ -5,13 +5,13 @@
      [
       {
       "NumberQuestion":1,
-      "Question":"Вычислите:  55 + 12",
-      "Answer":["75","77","99"],
-      "Result":"77"
+      "Question":"Вычислите:  55 + 12 = ",
+      "Answer":["75","67","99"],
+      "Result":"67"
       },
       {
       "NumberQuestion":2,
-      "Question":"Вычислите:  102 - 80",
+      "Question":"Вычислите:  102 - 80 = ",
       "Answer":["22","57","37"],
       "Result":"22"
       }
